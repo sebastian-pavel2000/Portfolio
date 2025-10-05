@@ -1,0 +1,381 @@
+/* Reset + box-sizing */
+html {
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Base */
+html, body {
+  height: 100%;
+  scroll-behavior: smooth;
+  font-family: Arial, sans-serif;
+  color: #caf0f8;
+  scroll-snap-type: y mandatory; 
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Background image */
+body {
+  background: url("../img/pbg.png") no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* ===== BOOTSTRAP NAVBAR CUSTOMIZATION ===== */
+.navbar {
+  background: rgba(17, 34, 64, 0.95) !important;
+  border-bottom: 2px solid #0077b6;
+  transition: all 0.3s ease-in-out;
+  opacity: 1;
+  visibility: visible;
+  padding: 1rem 5%;
+  width: calc(100% - 10px)
+}
+
+/* Show navbar when scrolled past hero - will be controlled by JS */
+/* .navbar.scrolled {
+  opacity: 1;
+  visibility: visible;
+}*/
+
+/* Logo image in navbar */
+.navbar-brand .logo-img {
+  height: 50px;
+  width: auto;
+}
+
+/* Navigation links */
+.navbar-nav .nav-link {
+  color: #caf0f8 !important;
+  font-weight: 500;
+  margin: 0 0.5rem;
+  transition: color 0.3s;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+  color: #00b4d8 !important;
+}
+
+/* Customize Bootstrap toggler icon color */
+.navbar-toggler {
+  border: 1px solid #00b4d8;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 180, 216, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Ensure collapsed menu has correct background */
+.navbar-collapse {
+  background: rgba(17, 34, 64, 0.98);
+  padding: 1rem;
+}
+
+@media (min-width: 992px) {
+  .navbar-collapse {
+    background: transparent !important;
+    padding: 0;
+  }
+}
+
+/* ===== SECTIONS ===== */
+.section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  padding: 4rem 2rem;
+  scroll-snap-align: start;
+}
+
+.content {
+  max-width: 900px;
+  line-height: 1.6;
+}
+
+.section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #00b4d8;
+}
+
+.section p, .section ul {
+  font-size: 1.2rem;
+  color: #caf0f8;
+  margin-bottom: 1rem;
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+  background: linear-gradient(
+    to bottom,
+    rgba(17, 34, 64, 0.95) 0%,
+    rgba(17, 34, 64, 0.7) 30%,
+    rgba(17, 34, 64, 0.3) 60%,
+    rgba(17, 34, 64, 0) 100%
+  );
+  text-align: center;
+}
+
+.hero-logo img {
+  height: 150px;
+  width: auto;
+  margin-bottom: 1.5rem;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: #90e0ef;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+/* ===== BUTTONS ===== */
+.btn, .btn-outline {
+  padding: 0.7rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn {
+  background: #00b4d8;
+  color: #112240;
+  box-shadow: 0 0 10px #00b4d8, 0 0 20px #00b4d8;
+}
+
+.btn:hover {
+  background: #0077b6;
+  color: #caf0f8;
+  box-shadow: 0 0 15px #00b4d8, 0 0 30px #00b4d8;
+}
+
+.btn-outline {
+  border: 2px solid #00b4d8;
+  color: #00b4d8;
+}
+
+.btn-outline:hover {
+  background: #00b4d8;
+  color: #112240;
+}
+
+/* ===== ENHANCED PROJECT CARDS ===== */
+.project-card {
+  background: rgba(17, 34, 64, 0.95);
+  border: 1px solid #0077b6;
+  border-radius: 15px;
+  padding: 1.5rem;
+  height: 100%;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 180, 216, 0.3);
+  border-color: #00b4d8;
+}
+
+.project-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  border: 1px solid #00b4d8;
+}
+
+.project-card h3 {
+  color: #00b4d8;
+  margin-bottom: 0.5rem;
+}
+
+.project-card p {
+  font-size: 1rem;
+  flex-grow: 1; /* Makes description take available space */
+}
+
+.project-status {
+  background: rgba(0, 180, 216, 0.2);
+  color: #90e0ef;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  display: inline-block;
+  margin-bottom: 0.8rem;
+  border: 1px solid #00b4d8;
+}
+
+.project-tech {
+  margin: 1rem 0;
+}
+
+.tech-tag {
+  background: rgba(0, 119, 182, 0.3);
+  color: #90e0ef;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+  border: 1px solid #0077b6;
+}
+
+/* ===== SKILLS SECTION ===== */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.skill-category {
+  background: rgba(17, 34, 64, 0.8);
+  border: 1px solid #0077b6;
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.skill-category:hover {
+  border-color: #00b4d8;
+  box-shadow: 0 0 15px rgba(0, 180, 216, 0.2);
+}
+
+.skill-category h3 {
+  color: #00b4d8;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.skill-tag {
+  background: linear-gradient(135deg, rgba(0, 180, 216, 0.15), rgba(0, 119, 182, 0.15));
+  color: #caf0f8;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  border: 1px solid rgba(0, 180, 216, 0.3);
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.skill-tag:hover {
+  background: linear-gradient(135deg, rgba(0, 180, 216, 0.25), rgba(0, 119, 182, 0.25));
+  border-color: #00b4d8;
+  transform: translateY(-2px);
+}
+
+/* ===== CONTACT & FOOTER ===== */
+#contact {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  scroll-snap-align: start;
+  padding-bottom: 4rem;
+}
+
+#contact footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+  background: rgba(17, 34, 64, 0.95);
+  color: #90e0ef;
+  font-size: 0.9rem;
+  border-top: 2px solid #0077b6;
+}
+
+#contact footer p{
+  margin-bottom: 0;
+}
+
+/* ===== CUSTOM SCROLLBAR ===== */
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #112240;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #00b4d8;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #00b4d8;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: #0077b6;
+  box-shadow: 0 0 15px #00b4d8;
+}
+
+body {
+  scrollbar-width: thin;
+  scrollbar-color: #00b4d8 #112240;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+  .section {
+    height: auto;
+    min-height: 100vh;
+    padding: 6rem 1rem 2rem;
+  }
+
+  .hero-logo img {
+    height: 120px;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .section h2 {
+    font-size: 2rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card {
+    margin-bottom: 1rem;
+  }
+}
